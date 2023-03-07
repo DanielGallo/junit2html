@@ -18,7 +18,7 @@
                         <tbody>
                             {% for test in suite.classes[classname].cases %}
                             <tr>
-                                <td><b>{{test.name}}</b></td>
+                                <td>{{test.name[test.name.index(':') + 2:test.name |length]}} &nbsp;<a href="https://docs.fastlane.tools/actions/{{test.name[test.name.index(':') + 2:test.name |length]}}/" alt="Fastlane documentation" title="Fastlane documentation" target="_blank">&#128279;</a></td>
                                 <td>{{test.duration|round(1)}} sec</td>
                                 <td>{{test.outcome().title()}}</td>
                             </tr>
